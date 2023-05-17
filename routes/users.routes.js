@@ -44,5 +44,5 @@ router.put('/edit', (req, res) => {
 
 
 router.delete('/delete');
-
+console.log(users)
 module.exports = router;

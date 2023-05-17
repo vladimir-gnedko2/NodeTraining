@@ -5,5 +5,6 @@ const messageRoutes = require("./messages.routes");
 
 
 router.use('/users', userRoutes);
-router.use('/messages', messageRoutes);
+router.use('/messages', messageRoutes); 
+
 module.exports = router;
