@@ -17,7 +17,7 @@ let message2 = new Message ('ОШИБКА_2', 2)
 
 let messages = [message1, message2]
 
-console.log(messages);
+// console.log(messages);
 
 
 
@@ -25,7 +25,7 @@ console.log(messages);
 
 router.get('/:id',(req, res) => {
 
-    console.log(req.params); 
+    // console.log(req.params); 
     
     const messageId = messages.find((item) => item.id == req.params.id);
        res.send(messageId);

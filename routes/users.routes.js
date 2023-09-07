@@ -1,31 +1,35 @@
 const { response } = require('express');
 let express = require('express');
 let router = express.Router();
-
-
-function User (name, age, id){
-    this.name = name;
-    this.age = age;
-    this.id = id;
-};
-
-let user1 = new User ('Pasha', 25, 1);
-let user2= new User ('Vova', 29, 2);
-let user3 = new User ('Gena', 28, 3);
-
-let users = [user1, user2, user3];
-
-console.log(users);
+const UsersControllers = require('../controllers/users.controller')
 
 
 
 
-router.get('/:id', (req, res) => {
- console.log(req.params); 
- 
- const userId = users.find((item) => item.id == req.params.id);
-    res.send(userId);
+
+
+router.get('/', async (req, res) => {
+    try {
+        const users = await UsersControllers.getUsers()
+        res.send(users);
+    } catch (e) { 
+        console.log(e);
+    }
+   
 });
+
+router.get('/userId/:id', (req, res) => {
+    try {
+        const user = UsersControllers.getUsersId(req.params.id)
+        res.send(user);
+    } catch (e) {
+        console.log(e);
+    }
+   
+});
+
+
+
 
 
 
@@ -44,5 +48,5 @@ router.put('/edit', (req, res) => {
 
 
 router.delete('/delete');
-console.log(users)
+
 module.exports = router;
