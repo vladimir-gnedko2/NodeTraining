@@ -1,3 +1,15 @@
-{
-    "obj": "получен"
-}
+[
+   {
+      "obj": "получен",
+      "members": [
+         {
+            "name": "Pasha",
+            "age": 29,
+            "secretIdentity": "Pasha_from_REDEV"
+         }
+      ]
+   },
+   {},
+   null,
+   null
+]
